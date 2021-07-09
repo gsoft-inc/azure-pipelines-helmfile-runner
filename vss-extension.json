@@ -1,0 +1,46 @@
+{
+    "manifestVersion": 1,
+    "id": "HelmfileRunner",
+    "name": "Helmfile Runner",
+    "version": "0.3.9",
+    "publisher": "yohandev",
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "description": "Executes the helmfile command line tool on the host.",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "icons": {
+        "default": "task/dist/icon.png"
+    },
+    "files": [
+        {
+            "path": "task/dist/src"
+        },
+        {
+            "path": "task/dist/node_modules"
+        },
+        {
+            "path": "task/dist/task.json"
+        },
+        {
+            "path": "task/dist/icon.png",
+            "addressable": true
+        }
+    ],
+    "contributions": [
+        {
+            "id": "HelmfileRunner",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "task/dist"
+            }
+        }
+    ]
+}
