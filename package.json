@@ -1,7 +1,7 @@
 {
   "name": "helmfile-installer-pipeline-task",
   "scripts": {
-    "postinstall": "cd task && npm install",
+    "postinstall": "cd task && npm install && cd - && node scripts/post-install.js",
     "package": "rimraf *.vsix task/dist && tsc -p task && tfx extension create --output-path PackageOutput",
     "bump-version": "node version-bump.js",
     "publish": "tfx extension publish --publisher gsoft",
@@ -19,6 +19,7 @@
   "devDependencies": {
     "@types/mocha": "^7.0.1",
     "@types/node": "^10.17.14",
+    "fs-extra": "^10.0.0",
     "husky": "^4.2.1",
     "minimist": "^1.2.3",
     "mocha": "^7.0.1",
