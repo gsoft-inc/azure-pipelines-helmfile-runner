@@ -26,6 +26,11 @@ describe('helmfileCommandBuilder', () => {
 
     tl.setVariable('agent.TempDirectory', tempDirectory);
     tl.setVariable('agent.ToolsDirectory', toolsDirectory);
+
+    sinon
+      .stub(tl, 'which')
+      .withArgs('helmfile')
+      .returns('/stub/helmfile');
   });
   after(function() {
     rimraf(tempDirectory, (_: any) => {
@@ -40,7 +45,6 @@ describe('helmfileCommandBuilder', () => {
       inputStub.withArgs(inputNames.helmfilePath).returns(defaultHelmfilePath);
 
       const helmfileCommand = new helmfileCommandBuilder('diff').build();
-      helmfileCommand.execHelmfileCommand();
       expect(helmfileCommand.getToolPath()).to.contain('helmfile');
       expect(helmfileCommand.getArguments()).to.contain(`--file ${defaultHelmfilePath}`);
     });
