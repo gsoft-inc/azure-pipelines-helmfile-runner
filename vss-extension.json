@@ -1,46 +1,62 @@
 {
-    "manifestVersion": 1,
-    "id": "HelmfileRunner",
-    "name": "Helmfile Runner",
-    "version": "0.3.9",
-    "publisher": "yohandev",
-    "targets": [
-        {
-            "id": "Microsoft.VisualStudio.Services"
-        }
-    ],
-    "description": "Executes the helmfile command line tool on the host.",
-    "categories": [
-        "Azure Pipelines"
-    ],
-    "icons": {
-        "default": "task/dist/icon.png"
+  "manifestVersion": 1,
+  "id": "HelmfileRunner",
+  "name": "Helmfile Runner",
+  "version": "1.0.0",
+  "publisher": "GSoft",
+  "author": "Yohan Belval",
+  "public": true,
+  "galleryFlags": ["Public"],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "Allows the use of the helmfile command line tool on the executing host.",
+  "tags": ["Helm", "Build", "Release", "Azure Pipelines", "Visual Studio Extensions"],
+  "categories": ["Azure Pipelines"],
+  "content": {
+    "details": {
+      "path": "docs/overview.md"
     },
-    "files": [
-        {
-            "path": "task/dist/src"
-        },
-        {
-            "path": "task/dist/node_modules"
-        },
-        {
-            "path": "task/dist/task.json"
-        },
-        {
-            "path": "task/dist/icon.png",
-            "addressable": true
-        }
-    ],
-    "contributions": [
-        {
-            "id": "HelmfileRunner",
-            "type": "ms.vss-distributed-task.task",
-            "targets": [
-                "ms.vss-distributed-task.tasks"
-            ],
-            "properties": {
-                "name": "task/dist"
-            }
-        }
-    ]
+    "license": {
+      "path": "LICENSE"
+    }
+  },
+  "icons": {
+    "default": "task/icon.png"
+  },
+  "files": [
+    {
+      "path": "task/dist",
+      "packagePath": "Tasks/HelmfileRunner/src"
+    },
+    {
+      "path": "task/node_modules",
+      "packagePath": "Tasks/HelmfileRunner/node_modules"
+    },
+    {
+      "path": "task/task.json",
+      "packagePath": "Tasks/HelmfileRunner/task.json"
+    },
+    {
+      "path": "task/icon.png",
+      "packagePath": "Tasks/HelmfileRunner/icon.png",
+      "addressable": true
+    }
+  ],
+  "contributions": [
+    {
+      "id": "HelmfileRunner",
+      "type": "ms.vss-distributed-task.task",
+      "targets": ["ms.vss-distributed-task.tasks"],
+      "properties": {
+        "name": "Tasks/HelmfileRunner"
+      }
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/gsoft-inc/azure-pipelines-helmfile-installer"
+  }
 }
