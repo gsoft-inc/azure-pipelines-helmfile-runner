@@ -4,7 +4,7 @@
   "friendlyName": "Execute helmfile cli",
   "description": "Runs helmfile cli tool on agent host.",
   "author": "GSoft Inc.",
-  "helpMarkDown": "Runs [helmfile](https://github.com/roboll/helmfile) cli tool on agent host.  See [extension page](https://marketplace.visualstudio.com/items?itemName=gsoft.HelmfileRunner) for more information.",
+  "helpMarkDown": "See [extension page](https://marketplace.visualstudio.com/items?itemName=gsoft.HelmfileRunner) for more information.",
   "category": "Utility",
   "visibility": ["Build", "Release"],
   "demands": [],
