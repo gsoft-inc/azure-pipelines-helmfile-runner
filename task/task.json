@@ -6,10 +6,7 @@
   "author": "GSoft Inc.",
   "helpMarkDown": "Replace with markdown to show in help",
   "category": "Utility",
-  "visibility": [
-    "Build",
-    "Release"
-  ],
+  "visibility": ["Build", "Release"],
   "demands": [],
   "version": {
     "Major": "0",
@@ -22,8 +19,7 @@
     {
       "name": "cluster",
       "displayName": "Kubernetes Cluster",
-      "isExpanded": true,
-      "visibleRule": "command != logout"
+      "isExpanded": true
     },
     {
       "name": "commands",
@@ -33,8 +29,7 @@
     {
       "name": "advanced",
       "displayName": "Advanced",
-      "isExpanded": false,
-      "visibleRule": "command != login && command != logout"
+      "isExpanded": false
     }
   ],
   "inputs": [
@@ -54,9 +49,7 @@
     },
     {
       "name": "azureSubscriptionEndpoint",
-      "aliases": [
-        "azureSubscription"
-      ],
+      "aliases": ["azureSubscription"],
       "type": "connectedService:AzureRM",
       "label": "Azure subscription",
       "helpMarkDown": "Select an Azure subscription, which has your Azure Container Registry.",
@@ -102,9 +95,7 @@
     },
     {
       "name": "kubernetesServiceEndpoint",
-      "aliases": [
-        "kubernetesServiceConnection"
-      ],
+      "aliases": ["kubernetesServiceConnection"],
       "type": "connectedService:kubernetes",
       "label": "Kubernetes Service Connection",
       "helpMarkDown": "Select a Kubernetes service connection.",
@@ -122,8 +113,6 @@
         "diff": "diff",
         "apply": "apply",
         "sync": "sync",
-        "login": "login",
-        "logout": "logout",
         "deps": "deps",
         "repos": "repos",
         "charts": "charts",
@@ -219,6 +208,15 @@
       "visibleRule": "command != version || command != help",
       "required": "false",
       "groupName": "commands"
+    },
+    {
+      "name": "installUpdateHelmDiff",
+      "type": "boolean",
+      "label": "Install or update Helm diff plugin",
+      "defaultValue": "true",
+      "visibleRule": "command != diff",
+      "helpMarkDown": "Install or update the [Helm diff plugin](https://github.com/databus23/helm-diff) used with the helmfile diff command.",
+      "groupName": "advanced"
     },
     {
       "name": "quiet",
