@@ -214,7 +214,7 @@
       "type": "boolean",
       "label": "Install or update Helm diff plugin",
       "defaultValue": "true",
-      "visibleRule": "command != diff",
+      "visibleRule": "command == diff",
       "helpMarkDown": "Install or update the [Helm diff plugin](https://github.com/databus23/helm-diff) used with the helmfile diff command.",
       "groupName": "advanced"
     },
