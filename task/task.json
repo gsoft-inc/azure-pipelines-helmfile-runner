@@ -2,16 +2,16 @@
   "id": "be10e55f-92fd-41ad-adb3-c9cf905cc71f",
   "name": "HelmfileRunner",
   "friendlyName": "Execute helmfile cli",
-  "description": "Runs helmfile command line on agent host.",
+  "description": "Runs helmfile cli tool on agent host.",
   "author": "GSoft Inc.",
-  "helpMarkDown": "Replace with markdown to show in help",
+  "helpMarkDown": "Runs [helmfile](https://github.com/roboll/helmfile) cli tool on agent host.  See [extension page](https://marketplace.visualstudio.com/items?itemName=gsoft.HelmfileRunner) for more information.",
   "category": "Utility",
   "visibility": ["Build", "Release"],
   "demands": [],
   "version": {
-    "Major": "0",
-    "Minor": "3",
-    "Patch": "9"
+    "Major": "1",
+    "Minor": "0",
+    "Patch": "0"
   },
   "minimumAgentVersion": "1.95.0",
   "instanceNameFormat": "helm $(command)",
