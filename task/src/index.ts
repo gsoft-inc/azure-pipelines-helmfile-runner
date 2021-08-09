@@ -62,7 +62,13 @@ async function run() {
       case 'diff':
         const installUpdateHelmDiff = tl.getBoolInput('installUpdateHelmDiff');
         if (installUpdateHelmDiff) {
-          const plugInstallResult = new helmCommand().execHelmPluginInstallCommand('diff', 'https://github.com/databus23/helm-diff', true);
+          const pluginOptions = { name: 'diff', url: 'https://github.com/databus23/helm-diff', autoUpdate: true, silent: true };
+          const plugInstallResult = new helmCommand().execHelmPluginInstallCommand(
+            pluginOptions.name,
+            pluginOptions.url,
+            pluginOptions.autoUpdate,
+            pluginOptions.silent
+          );
           if (
             plugInstallResult.code != tl.TaskResult.Succeeded ||
             !!plugInstallResult.error ||
