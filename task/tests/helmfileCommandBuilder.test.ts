@@ -40,7 +40,7 @@ describe('helmfileCommandBuilder', () => {
       return;
     });
   });
-  describe('#helmfileCommandBuilder()', () => {
+  describe('#build()', () => {
     it('should find tool and add file argument', async () => {
       inputStub.withArgs(inputNames.helmfilePath).returns(defaultHelmfilePath);
 
