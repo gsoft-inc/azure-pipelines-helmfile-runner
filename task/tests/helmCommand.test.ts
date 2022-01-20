@@ -72,7 +72,8 @@ describe('helmCommand', () => {
       { asked: '1.1.1', installed: '2.2.2' },
       { asked: '5.5.5', installed: '5.5.0' },
       { asked: 'v1.1.1', installed: 'v2.2.2' },
-      { asked: 'v5.5.5', installed: 'v5.5.0' }
+      { asked: 'v5.5.5', installed: 'v5.5.0' },
+      { asked: '97f77494396694beb878128430205888a91d70b4', installed: 'v5.5.0' }
     ].forEach(function(version) {
       it(`should reinstall if found ${version.installed} and asked version is ${version.asked}`, async () => {
         const command = new helmCommand();

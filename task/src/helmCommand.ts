@@ -70,16 +70,11 @@ export default class helmCommand extends baseCommand {
     if (installedPlugin) {
       if (version == 'latest') {
         return this.updatePlugin(pluginName, silent);
-      } else if (semver.neq(version, installedPlugin.version, true)) {
+      } else if (semver.valid(version) && semver.eq(version, installedPlugin.version, true)) {
+        return { code: 0, stdout: '', stderr: '', error: null } as IExecSyncResult;
+      } else {
         this.unInstallPlugin(pluginName, silent);
         return this.installPlugin(pluginUrl, version, silent);
-      } else {
-        return {
-          code: 0,
-          stdout: '',
-          stderr: '',
-          error: null
-        } as IExecSyncResult;
       }
     }
 
