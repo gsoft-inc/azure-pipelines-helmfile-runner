@@ -210,12 +210,21 @@
       "groupName": "commands"
     },
     {
-      "name": "installUpdateHelmDiff",
+      "name": "installHelmDiff",
       "type": "boolean",
       "label": "Install or update Helm diff plugin",
       "defaultValue": "true",
       "visibleRule": "command == diff",
-      "helpMarkDown": "Install or update the [Helm diff plugin](https://github.com/databus23/helm-diff) used with the helmfile diff command.",
+      "helpMarkDown": "Install the [Helm diff plugin](https://github.com/databus23/helm-diff) used with the helmfile diff command.",
+      "groupName": "advanced"
+    },
+    {
+      "name": "helmDiffVersion",
+      "type": "string",
+      "label": "Helm diff plugin version to use",
+      "defaultValue": "latest",
+      "visibleRule": "installHelmDiff == true",
+      "helpMarkDown": "Version of the helm-diff plugin to use.",
       "groupName": "advanced"
     },
     {

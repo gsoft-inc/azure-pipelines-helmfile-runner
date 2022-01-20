@@ -60,13 +60,14 @@ async function run() {
     const failOnStderr = tl.getBoolInput('failOnStderr');
     switch (command) {
       case 'diff':
-        const installUpdateHelmDiff = tl.getBoolInput('installUpdateHelmDiff');
-        if (installUpdateHelmDiff) {
-          const pluginOptions = { name: 'diff', url: 'https://github.com/databus23/helm-diff', autoUpdate: true, silent: true };
+        const installHelmDiff = tl.getBoolInput('installHelmDiff');
+        const helmDiffVersion = tl.getInput('helmDiffVersion');
+        if (installHelmDiff) {
+          const pluginOptions = { name: 'diff', url: 'https://github.com/databus23/helm-diff', version: helmDiffVersion, silent: true };
           const plugInstallResult = new helmCommand().execHelmPluginInstallCommand(
             pluginOptions.name,
             pluginOptions.url,
-            pluginOptions.autoUpdate,
+            pluginOptions.version,
             pluginOptions.silent
           );
           if (
